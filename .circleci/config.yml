@@ -28,7 +28,7 @@ jobs:
       - run: yarn build
 
       #run checks
-      - run: yarn audit
+      - run: yarn audit || true
       - run: npx yarn-audit-fix
 
 workflows:
