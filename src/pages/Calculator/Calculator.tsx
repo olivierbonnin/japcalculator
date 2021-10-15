@@ -82,6 +82,7 @@ export const CalculatorPage: React.FC<Props> = (props: Props) => {
               {result} Kcal
             </Button>
           </div>
+          <div className="overflow">You ate tooo much</div>
         </div>
         <div className={classes.lateralBar}>
           <div className={classes.barSpacer} />
