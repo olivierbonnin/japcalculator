@@ -88,7 +88,7 @@ export const CalculatorPage: React.FC<Props> = (props: Props) => {
           <div>
             <label htmlFor="limit">Your limits (kCal):</label>
             <input type="number" id="limit" name="userLimit" min="1800" max="5000" onChange={(e)=>{setLimitUser(parseInt(e.target.value))}}></input>
-            <div id="overflow">You ate {dailyOverflow} too much</div>
+            <div id="overflow">You ate {dailyOverflow}x too much</div>
           </div>
         </div>
         <div className={classes.lateralBar}>
