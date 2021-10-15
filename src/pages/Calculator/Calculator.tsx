@@ -55,6 +55,9 @@ export const CalculatorPage: React.FC<Props> = (props: Props) => {
     return acc + values[itemName].kcal;
   }, 0);
 
+  const [limitUser, setLimitUser] = useState<number>(0);
+  const dailyOverflow = result/limitUser;
+
   return (
     <div className={classes.container}>
       <div className={classes.calculatorContainer}>
@@ -82,7 +85,11 @@ export const CalculatorPage: React.FC<Props> = (props: Props) => {
               {result} Kcal
             </Button>
           </div>
-          <div className="overflow">You ate tooo much</div>
+          <div>
+            <label htmlFor="limit">Your limits (kCal):</label>
+            <input type="number" id="limit" name="userLimit" min="1800" max="5000" onChange={(e)=>{setLimitUser(parseInt(e.target.value))}}></input>
+            <div id="overflow">You ate {dailyOverflow} too much</div>
+          </div>
         </div>
         <div className={classes.lateralBar}>
           <div className={classes.barSpacer} />
